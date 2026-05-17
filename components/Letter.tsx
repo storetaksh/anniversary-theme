@@ -301,7 +301,7 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                         <div className="relative w-[70vw] max-w-[350px] border border-[#7c7566] rounded-t-full flex flex-col items-center p-2.5 pb-6 -mt-19 bg-[#fefefe]">
 
                             {/* Image Container */}
-                            <div className="relative w-full aspect-[4/5] overflow-hidden rounded-t-full mb-4">
+                            <div className="relative w-full aspect-4/5 overflow-hidden rounded-t-full mb-4">
                                 <Image
                                     src="/assets/images/couple.jpeg"
                                     alt="Couple"
@@ -316,7 +316,7 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                                 {/* Faint '&' */}
                                 <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-10 text-8xl font-script text-[#ede3e3] z-0 opacity-70">&amp;</span>
 
-                                <p className="font-sans uppercase tracking-[0.2em] text-[16px] md:text-xs font-semibold text-[#700a0a] leading-[1.7] tracking-[.15em] z-10 text-center">
+                                <p className="font-sans uppercase text-[16px] md:text-xs font-semibold text-[#700a0a] leading-[1.7] tracking-[.15em] z-10 text-center">
                                     {weddingData?.couple?.groom?.name ? `MR. ${weddingData.couple.groom.name.toUpperCase()}` : "MR. SUBODH VERMA"}<br />
                                     {weddingData?.couple?.bride?.name ? `MRS. ${weddingData.couple.bride.name.toUpperCase()}` : "MRS. SHWETA VERMA"}
                                 </p>
@@ -332,8 +332,8 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                     </div>
 
                     {/* SECTION 1: THE DETAILS */}
-                    <div className={`absolute inset-0 pt-10 pb-16 flex flex-col items-center justify-center text-center px-6 transition-all duration-1000 ease-out ${activeIndex === 1 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
-                        <img src="/assets/images/logo-plain.svg" alt="Logo" className="w-[40vw] md:w-[250px] mb-12 md:mb-4 object-contain opacity-90" />
+                    <div className={`absolute inset-0 pt-6 pb-24 flex flex-col items-center justify-center text-center px-6 transition-all duration-1000 ease-out ${activeIndex === 1 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
+                        <img src="/assets/images/logo-plain.svg" alt="Logo" className="w-[40vw] md:w-[250px] mb-4 object-contain opacity-90" />
                         <div className={`w-full h-4 bg-[url('/assets/images/line-break.png')] bg-contain bg-center bg-no-repeat mb-4 ${t.lineBreak}`} />
 
                         <p className={`font-sans uppercase text-2xl md:text-3xl font-bold tracking-[0.2em] mb-2 ${t.textAccent}`}>When & Where</p>
@@ -381,8 +381,8 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                     </div>
 
                     {/* SECTION 2: THE CELEBRATION DETAILS */}
-                    <div className={`absolute inset-0 pt-10 pb-16 flex flex-col items-center justify-center text-center px-10 transition-all duration-1000 ease-out ${activeIndex === 2 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
-                        <img src="/assets/images/logo-plain.svg" alt="Logo" className="w-[40vw] md:w-[250px] mb-12 md:mb-4 object-contain opacity-90" />
+                    <div className={`absolute inset-0 pt-6 pb-24 flex flex-col items-center justify-center text-center px-10 transition-all duration-1000 ease-out ${activeIndex === 2 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
+                        <img src="/assets/images/logo-plain.svg" alt="Logo" className="w-[40vw] md:w-[250px] mb-4 object-contain opacity-90" />
                         <p className={`font-sans uppercase text-2xl md:text-3xl font-bold tracking-[0.2em] mb-4 ${t.textAccent}`}>The Celebration</p>
 
                         {/* Elegant Image Frame */}
@@ -415,8 +415,8 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                     </div>
 
                     {/* SECTION 3: RSVP */}
-                    <div className={`absolute inset-0 pt-10 pb-16 flex flex-col items-center justify-center text-center px-6 transition-all duration-1000 ease-out ${activeIndex === 3 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
-                        <img src="/assets/images/logo-plain.svg" alt="Logo" className="w-[40vw] md:w-[250px] mb-12 md:mb-4 object-contain opacity-90" />
+                    <div className={`absolute inset-0 pt-6 pb-24 flex flex-col items-center justify-center text-center px-6 transition-all duration-1000 ease-out ${activeIndex === 3 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
+                        <img src="/assets/images/logo-plain.svg" alt="Logo" className="w-[40vw] md:w-[250px] mb-4 object-contain opacity-90" />
                         <h2 className={`font-sans uppercase text-3xl md:text-4xl font-bold tracking-[0.2em] mb-4 drop-shadow-sm ${t.textAccent}`}>RSVP</h2>
                         <p className={`font-sans text-[10px] md:text-xs font-semibold leading-[1.7] max-w-xs mb-6 ${t.textMuted}`}>
                             We would be thrilled to have you join us. Please let us know if you can make it.
@@ -428,19 +428,19 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                     </div>
 
                     {/* SECTION 4: CONTACT & SIGN OFF */}
-                    <div className={`absolute inset-0 pt-16 flex flex-col items-center justify-center text-center px-10 transition-all duration-1000 ease-out ${activeIndex === 4 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
-                        <img src="/assets/images/logo-plain.svg" alt="Logo" className="w-[40vw] md:w-[250px] mb-12 md:mb-4 object-contain opacity-90" />
-                        <h2 className={`font-sans uppercase text-md md:text-lg font-bold tracking-[0.2em] mb-4 drop-shadow-sm ${t.textAccent}`}>Forever Marked in Time</h2>
-                        <p className={`font-sans text-[10px] md:text-xs font-semibold leading-[1.7] max-w-[280px] md:max-w-xs mb-10 ${t.textMuted}`}>
+                    <div className={`absolute inset-0 pt-8 pb-20 flex flex-col items-center justify-center text-center px-10 transition-all duration-1000 ease-out ${activeIndex === 4 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
+                        <img src="/assets/images/logo-plain.svg" alt="Logo" className="w-[40vw] md:w-[250px] mb-6 md:mb-4 object-contain opacity-90" />
+                        <h2 className={`font-sans uppercase text-md md:text-lg font-bold tracking-[0.2em] mb-3 drop-shadow-sm ${t.textAccent}`}>Forever Marked in Time</h2>
+                        <p className={`font-sans text-[10px] md:text-xs font-semibold leading-[1.7] max-w-[280px] md:max-w-xs mb-6 ${t.textMuted}`}>
                             Counting down the days until we celebrate this beautiful milestone together.
                         </p>
 
                         <div className="flex flex-col items-center justify-center w-full z-20 relative">
-                            <div className={`font-sans uppercase text-2xl md:text-3xl font-bold tracking-[0.2em] mb-6 ${t.textMain}`}>
+                            <div className={`font-sans uppercase text-xl md:text-2xl font-bold tracking-[0.2em] mb-4 ${t.textMain}`}>
                                 {weddingData?.wedding?.displayDate || "MAY 31ST, 2026"}
                             </div>
 
-                            <div className={`w-20 h-px mx-auto mb-8 ${t.border} border-t`}></div>
+                            <div className={`w-20 h-px mx-auto mb-2 ${t.border} border-t`}></div>
 
                             <CountdownTimer
                                 targetDate={weddingData?.wedding?.date || "2026-05-31T19:00:00"}
@@ -449,7 +449,7 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                             />
                         </div>
 
-                        <h3 className={`font-sans uppercase text-lg md:text-xl font-bold tracking-[0.2em] mt-4 ${t.textMain}`}>See you there</h3>
+                        <h3 className={`font-sans uppercase text-sm md:text-base font-bold tracking-[0.2em] mt-8 ${t.textMain}`}>See you there</h3>
 
                         {/* HALF SEAL FOR CLOSING */}
                         <div className="absolute bottom-[-30px] md:bottom-[-40px] left-1/2 -translate-x-1/2 z-50">
@@ -470,7 +470,7 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                                 />
 
                                 {/* Circular Instruction Text */}
-                                <div className="absolute inset-[-25px] md:inset-[-30px] z-0 pointer-events-none transition-opacity duration-1000 opacity-70 group-hover:opacity-100">
+                                <div className="absolute inset-[-20px] md:inset-[-25px] z-0 pointer-events-none transition-opacity duration-1000 opacity-70 group-hover:opacity-100">
                                     <svg viewBox="0 0 200 200" className="w-full h-full animate-spin-slow origin-center overflow-visible">
                                         <path
                                             id="closeCirclePath"
@@ -497,13 +497,14 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                             <div className={`transition-all duration-700 flex flex-col items-center ${activeIndex === totalSections - 1 || !isUnfolded ? 'opacity-0 translate-y-4 pointer-events-none' : 'opacity-100 translate-y-0 pointer-events-auto'}`}>
                                 <button
                                     onClick={scrollToNext}
-                                    className={`flex flex-col items-center justify-center gap-2 group backdrop-blur-md px-6 py-3 rounded-full shadow-lg transition-all active:scale-95 ${t.navBtnBg} cursor-pointer select-none mb-2`}
+                                    className={`flex flex-row items-center justify-center gap-2 group backdrop-blur-md px-4 py-2.5 rounded-full shadow-lg transition-all active:scale-95 ${t.navBtnBg} cursor-pointer select-none mb-2`}
                                     style={{ touchAction: "manipulation", WebkitTapHighlightColor: "transparent" }}
                                 >
-                                    <span className={`text-xs uppercase tracking-[0.2em] font-bold ${t.navBtnText} pointer-events-none`}>
+                                    <ChevronDown className={`w-3.5 h-3.5 animate-bounce ${t.navBtnIcon} pointer-events-none`} strokeWidth={2.5} />
+                                    <span className={`text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold ${t.navBtnText} pointer-events-none whitespace-nowrap`}>
                                         {activeIndex === 0 ? "Tap to Read" : "Tap for More"}
                                     </span>
-                                    <ChevronDown className={`w-4 h-4 animate-bounce ${t.navBtnIcon} pointer-events-none`} strokeWidth={2.5} />
+                                    <ChevronDown className={`w-3.5 h-3.5 animate-bounce ${t.navBtnIcon} pointer-events-none`} strokeWidth={2.5} />
                                 </button>
                                 <span className={`text-[7px] md:text-[9px] uppercase font-sans tracking-[0.2em] opacity-80 ${t.textMuted} pointer-events-none`}>
                                     Or swipe to explore
