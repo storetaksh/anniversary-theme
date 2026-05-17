@@ -160,7 +160,7 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
 
     const generateCalendarLink = (celebration: any) => {
         if (!celebration) return "#";
-        const title = encodeURIComponent(`${groomFirstName} & ${brideFirstName}'s Engagement`);
+        const title = encodeURIComponent(`${groomFirstName} & ${brideFirstName}'s Anniversary`);
         const details = encodeURIComponent("We are so excited to celebrate with you!");
         const location = encodeURIComponent(celebration.venue || "");
 

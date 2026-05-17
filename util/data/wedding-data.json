@@ -26,8 +26,8 @@
             "name": "Ring Ceremony",
             "date": "May 31, 2026",
             "time": "01:00 PM",
-            "venue": "KL7 Hotel & Banquets, near Gai Ghat, Patna, Bihar",
-            "googleMapsUrl": "https://www.google.com/maps/dir//KL7+Hotel+%26+Banquets,+Raja+Ghat,+Patna,+near+Gai+Ghat,+Alamganj,+Patna,+Bihar+800007/@25.6132805,85.1994117,17z/data=!4m20!1m10!3m9!1s0x39ed5fc0fa045c77:0x1f043ce8ee296988!2sKL7+Hotel+%26+Banquets!5m2!4m1!1i2!8m2!3d25.6132805!4d85.1994117!16s%2Fg%2F11k03tn_z1!4m8!1m0!1m5!1m1!1s0x39ed5fc0fa045c77:0x1f043ce8ee296988!2m2!1d85.1994117!2d25.6132805!3e0?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D",
+            "venue": "Satvika Celebration, Vijay Path, Khagaul Road, Patna 801105",
+            "googleMapsUrl": "https://maps.app.goo.gl/dKBeCLiBgkwjK1XT8",
             "showLocation": true,
             "mapImage": "assets/images/map.jpeg",
             "dressCode": "Occasion Ready",
@@ -35,17 +35,17 @@
         }
     ],
     "contact": {
-        "whatsapp": "919876543210",
+        "whatsapp": "919045187480",
         "instagram": ""
     },
     "messages": {
-        "inviteText": "With immense joy and heartfelt happiness, we, as a family, request the honor of your presence at the engagement of Pritish and Simran. As they begin a beautiful journey, we would be delighted to have you join us in celebrating this special occasion and blessing the couple for a lifetime of happiness.",
-        "thankYou": "Ready. Set. Glow! Thank you for being part of our journey.",
+        "inviteText": "With immense joy and heartfelt happiness, we, as a family, request the honor of your presence at the 25th Marriage Anniversary of Subodh and Shweta. As they celebrate this beautiful milestone, we would be delighted to have you join us in honoring their journey and blessing the couple for a lifetime of continued happiness.",
+        "thankYou": "With grateful hearts, we express our deepest thanks for gracing our 25th Wedding Anniversary celebration. Your presence and blessings truly made the occasion special.",
         "coupleQuote": ""
     },
     "music": {
         "url": "assets/music/music.mp3",
         "autoplay": true
     },
-    "websiteUrl": "https://pritishsimranengaged.netlify.app/"
+    "websiteUrl": "https://thegolden25.netlify.app/"
 }
