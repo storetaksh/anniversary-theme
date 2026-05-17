@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { MapPin, Calendar, ChevronDown } from "lucide-react";
 import RSVPForm from "./features/RSVPForm";
+import CountdownTimer from "./features/CountdownTimer";
 
 const FlowerAnimations = () => (
     <style dangerouslySetInnerHTML={{
@@ -124,25 +125,25 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
     const [activeIndex, setActiveIndex] = useState(0);
     const [isUnfolded, setIsUnfolded] = useState(false);
 
-    const totalSections = 4;
+    const totalSections = 5;
 
     // Toggle this variable to instantly switch between 'light' and 'dark' themes
     const themeConfig: string = 'light';
 
     const t = {
         bg: themeConfig === 'light' ? 'bg-[#edede4]' : 'bg-[#6B0D1E]',
-        textMain: themeConfig === 'light' ? 'text-[#483a27]' : 'text-[#E6C27A]',
+        textMain: themeConfig === 'light' ? 'text-[#700a0a]' : 'text-[#E6C27A]',
         textMuted: themeConfig === 'light' ? 'text-[#7c7566]' : 'text-[#E6C27A]/80',
         textLight: themeConfig === 'light' ? 'text-[#7c7566]' : 'text-[#E6C27A]/60',
-        textAccent: themeConfig === 'light' ? 'text-[#483a27]' : 'text-[#E6C27A]',
+        textAccent: themeConfig === 'light' ? 'text-[#700a0a]' : 'text-[#E6C27A]',
         border: themeConfig === 'light' ? 'border-[#c4bcab]' : 'border-[#E6C27A]',
-        btnSolid: themeConfig === 'light' ? 'bg-[#483a27] text-white hover:bg-[#7c7566]' : 'bg-[#E6C27A] text-[#6B0D1E] hover:bg-[#FCEBAE]',
-        btnOutline: themeConfig === 'light' ? 'border-[#c4bcab] bg-transparent text-[#483a27] hover:bg-[#c4bcab]/20' : 'border-[#E6C27A]/50 bg-transparent text-[#E6C27A] hover:bg-[#E6C27A]/10',
+        btnSolid: themeConfig === 'light' ? 'bg-[#700a0a] text-white hover:bg-[#7c7566]' : 'bg-[#E6C27A] text-[#6B0D1E] hover:bg-[#FCEBAE]',
+        btnOutline: themeConfig === 'light' ? 'border-[#c4bcab] bg-transparent text-[#700a0a] hover:bg-[#c4bcab]/20' : 'border-[#E6C27A]/50 bg-transparent text-[#E6C27A] hover:bg-[#E6C27A]/10',
         card: themeConfig === 'light' ? 'border-[#c4bcab]/50 bg-[#fefefe]/50' : 'border-[#E6C27A]/20 bg-[#E6C27A]/10',
         lineBreak: themeConfig === 'light' ? 'opacity-60 invert-0' : 'opacity-80 invert brightness-200 sepia hue-rotate-[-30deg] saturate-200',
         sealOrbit: themeConfig === 'light' ? 'fill-[#7c7566]/80' : 'fill-[#E6C27A]/90',
         navBtnBg: themeConfig === 'light' ? 'bg-white/90 border-[#c4bcab]/50 hover:bg-white' : 'bg-[#6B0D1E]/80 border-[#E6C27A]/30 hover:bg-[#6B0D1E]',
-        navBtnText: themeConfig === 'light' ? 'text-[#483a27]' : 'text-[#E6C27A]',
+        navBtnText: themeConfig === 'light' ? 'text-[#700a0a]' : 'text-[#E6C27A]',
         navBtnIcon: themeConfig === 'light' ? 'text-[#7c7566]' : 'text-[#E6C27A]',
     };
 
@@ -297,7 +298,7 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                             ? (isUnfolded ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-8 pointer-events-none")
                             : "opacity-0 -translate-y-8 pointer-events-none"}`}
                     >
-                        <div className="relative w-[80vw] max-w-[400px] border border-[#7c7566] rounded-t-full flex flex-col items-center p-2.5 pb-6 -mt-19 bg-[#fefefe]">
+                        <div className="relative w-[70vw] max-w-[350px] border border-[#7c7566] rounded-t-full flex flex-col items-center p-2.5 pb-6 -mt-19 bg-[#fefefe]">
 
                             {/* Image Container */}
                             <div className="relative w-full aspect-[4/5] overflow-hidden rounded-t-full mb-4">
@@ -313,9 +314,9 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                             {/* Names with Faint '&' */}
                             <div className="relative w-full flex flex-col items-center justify-center mb-5 mt-2">
                                 {/* Faint '&' */}
-                                <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-10 text-8xl font-script text-[#d1d0c5] z-0 opacity-70">&amp;</span>
+                                <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-10 text-8xl font-script text-[#ede3e3] z-0 opacity-70">&amp;</span>
 
-                                <p className="font-sans uppercase tracking-[0.2em] text-[16px] md:text-xs font-semibold text-[#483a27] leading-[1.7] tracking-[.15em] z-10 text-center">
+                                <p className="font-sans uppercase tracking-[0.2em] text-[16px] md:text-xs font-semibold text-[#700a0a] leading-[1.7] tracking-[.15em] z-10 text-center">
                                     {weddingData?.couple?.groom?.name ? `MR. ${weddingData.couple.groom.name.toUpperCase()}` : "MR. SUBODH VERMA"}<br />
                                     {weddingData?.couple?.bride?.name ? `MRS. ${weddingData.couple.bride.name.toUpperCase()}` : "MRS. SHWETA VERMA"}
                                 </p>
@@ -324,7 +325,7 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                             <div className={`w-20 h-px mx-auto mb-6 ${t.border} border-t`}></div>
 
                             {/* Date */}
-                            <h2 className="font-sans uppercase text-3xl font-bold tracking-[0.2em] text-[#483a27]">
+                            <h2 className="font-sans uppercase text-3xl font-bold tracking-[0.2em] text-[#700a0a]">
                                 {displayDay}<sup className="text-sm align-top -ml-0.5 tracking-[0.2em]">{displaySuffix.toUpperCase()}</sup> <span className="ml-2">{displayMonth.toUpperCase()}</span>
                             </h2>
                         </div>
@@ -332,18 +333,19 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
 
                     {/* SECTION 1: THE DETAILS */}
                     <div className={`absolute inset-0 pt-10 pb-16 flex flex-col items-center justify-center text-center px-6 transition-all duration-1000 ease-out ${activeIndex === 1 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
+                        <img src="/assets/images/logo-plain.svg" alt="Logo" className="w-[40vw] md:w-[250px] mb-12 md:mb-4 object-contain opacity-90" />
                         <div className={`w-full h-4 bg-[url('/assets/images/line-break.png')] bg-contain bg-center bg-no-repeat mb-4 ${t.lineBreak}`} />
 
-                        <p className={`font-script text-4xl md:text-5xl mb-2 ${t.textAccent}`}>When & Where</p>
-                        <p className={`font-sans font-light text-xs md:text-sm tracking-wide max-w-xs mb-4 ${t.textMuted}`}>
+                        <p className={`font-sans uppercase text-2xl md:text-3xl font-bold tracking-[0.2em] mb-2 ${t.textAccent}`}>When & Where</p>
+                        <p className={`font-sans text-[10px] md:text-xs font-semibold leading-[1.7] max-w-xs mb-4 ${t.textMuted}`}>
                             We cannot wait to share this beautiful evening with our closest friends and family.
                         </p>
 
                         <div className="flex flex-col gap-4 w-full">
                             <div className="flex flex-col items-center gap-1.5">
                                 <Calendar className={`w-4 h-4 md:w-5 md:h-5 ${t.textAccent}`} strokeWidth={1.5} />
-                                <div className={`font-sans font-light tracking-widest text-xs md:text-sm ${t.textMuted}`}>
-                                    <span className={`font-serif uppercase tracking-widest text-base md:text-lg font-bold ${t.textMain}`}>{weddingData?.celebrations?.[0]?.date || "Saturday, September 24th"}</span><br />
+                                <div className={`font-sans text-[10px] md:text-xs font-semibold leading-[1.7] ${t.textMuted}`}>
+                                    <span className={`font-sans uppercase text-sm md:text-base font-bold tracking-[0.2em] ${t.textMain}`}>{weddingData?.celebrations?.[0]?.date || "Saturday, September 24th"}</span><br />
                                     {weddingData?.celebrations?.[0]?.time || "Two Thousand and Twenty-Six"}
                                 </div>
                                 <a
@@ -358,8 +360,8 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                             </div>
                             <div className="flex flex-col items-center gap-1.5">
                                 <MapPin className={`w-4 h-4 md:w-5 md:h-5 ${t.textAccent}`} strokeWidth={1.5} />
-                                <div className={`font-sans font-light tracking-wide text-xs md:text-sm ${t.textMuted}`}>
-                                    <span className={`font-serif uppercase tracking-widest text-base md:text-lg font-bold ${t.textMain}`}>{weddingData?.celebrations?.[0]?.venue?.split(',')[0] || "The Conservatory"}</span><br />
+                                <div className={`font-sans text-[10px] md:text-xs font-semibold leading-[1.7] ${t.textMuted}`}>
+                                    <span className={`font-sans uppercase text-sm md:text-base font-bold tracking-[0.2em] ${t.textMain}`}>{weddingData?.celebrations?.[0]?.venue?.split(',')[0] || "The Conservatory"}</span><br />
                                     {weddingData?.celebrations?.[0]?.venue?.split(',').slice(1).join(',').trim() || "123 Botanical Garden Way"}
                                 </div>
                                 {weddingData?.celebrations?.[0]?.googleMapsUrl && (
@@ -380,10 +382,11 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
 
                     {/* SECTION 2: THE CELEBRATION DETAILS */}
                     <div className={`absolute inset-0 pt-10 pb-16 flex flex-col items-center justify-center text-center px-10 transition-all duration-1000 ease-out ${activeIndex === 2 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
-                        <p className={`font-script text-4xl md:text-5xl mb-4 ${t.textAccent}`}>The Celebration</p>
+                        <img src="/assets/images/logo-plain.svg" alt="Logo" className="w-[40vw] md:w-[250px] mb-12 md:mb-4 object-contain opacity-90" />
+                        <p className={`font-sans uppercase text-2xl md:text-3xl font-bold tracking-[0.2em] mb-4 ${t.textAccent}`}>The Celebration</p>
 
                         {/* Elegant Image Frame */}
-                        <div className={`relative w-40 h-40 md:w-56 md:h-56 mb-6 rounded-t-full overflow-hidden border-2 ${t.border} p-1 shadow-xl`}>
+                        {/* <div className={`relative w-40 h-40 md:w-56 md:h-56 mb-6 rounded-t-full overflow-hidden border-2 ${t.border} p-1 shadow-xl`}>
                             <div className="relative w-full h-full rounded-t-full overflow-hidden">
                                 <img
                                     src="/assets/images/engagement-rings.webp"
@@ -392,64 +395,61 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                                 />
                                 <div className="absolute inset-0 bg-[#6B0D1E]/10 mix-blend-overlay"></div>
                             </div>
-                        </div>
+                        </div> */}
 
                         <div className={`p-4 w-full max-w-sm rounded-sm ${t.card}`}>
                             <div className="mb-3">
                                 <h4 className={`text-[10px] md:text-xs font-sans font-bold uppercase tracking-[0.2em] mb-1 ${t.textMain}`}>Dress Code</h4>
-                                <p className={`font-serif text-xs md:text-sm ${t.textMuted}`}>{weddingData?.celebrations?.[0]?.dressCode || "Black-Tie Optional"}</p>
+                                <p className={`font-sans text-[10px] md:text-xs font-semibold leading-[1.7] ${t.textMuted}`}>{weddingData?.celebrations?.[0]?.dressCode || "Black-Tie Optional"}</p>
                             </div>
 
                             <div className={`w-8 h-px mx-auto mb-3 ${t.border} border-t`}></div>
 
                             <div>
                                 <h4 className={`text-[10px] md:text-xs font-sans font-bold uppercase tracking-[0.2em] mb-1.5 ${t.textMain}`}>Your Presence</h4>
-                                <p className={`font-sans font-light text-[10px] md:text-sm leading-relaxed ${t.textLight}`}>
+                                <p className={`font-sans text-[10px] md:text-xs font-semibold leading-[1.7] ${t.textLight}`}>
                                     Please bless us with your presence as we celebrate this beautiful milestone. We look forward to sharing our joy with you.
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    {/* SECTION 3: CONTACT & SIGN OFF */}
-                    <div className={`absolute inset-0 pt-16 flex flex-col items-center justify-center text-center px-10 transition-all duration-1000 ease-out ${activeIndex === 3 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
-                        <h2 className={`font-script text-5xl md:text-6xl mb-6 drop-shadow-sm ${t.textAccent}`}>Reach Out</h2>
-                        <p className={`font-sans font-light text-xs md:text-base tracking-wide leading-relaxed max-w-[280px] md:max-w-xs mb-8 ${t.textMuted}`}>
-                            For any queries regarding the celebrations or venue directions, please feel free to reach out to us.
+                    {/* SECTION 3: RSVP */}
+                    <div className={`absolute inset-0 pt-10 pb-16 flex flex-col items-center justify-center text-center px-6 transition-all duration-1000 ease-out ${activeIndex === 3 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
+                        <img src="/assets/images/logo-plain.svg" alt="Logo" className="w-[40vw] md:w-[250px] mb-12 md:mb-4 object-contain opacity-90" />
+                        <h2 className={`font-sans uppercase text-3xl md:text-4xl font-bold tracking-[0.2em] mb-4 drop-shadow-sm ${t.textAccent}`}>RSVP</h2>
+                        <p className={`font-sans text-[10px] md:text-xs font-semibold leading-[1.7] max-w-xs mb-6 ${t.textMuted}`}>
+                            We would be thrilled to have you join us. Please let us know if you can make it.
                         </p>
 
-                        <div className={`p-6 w-full max-w-sm rounded-sm ${t.card} mb-8`}>
-                            <h4 className={`text-[10px] md:text-xs font-sans font-bold uppercase tracking-[0.2em] mb-5 ${t.textMain}`}>Contact Details</h4>
+                        <div className="w-full z-20 relative">
+                            <RSVPForm weddingData={weddingData} />
+                        </div>
+                    </div>
 
-                            {weddingData?.contact?.whatsapp ? (
-                                <div className={`font-serif text-sm tracking-widest ${t.textMuted}`}>
-                                    <span className={`font-sans font-bold ${t.textMain} text-[10px] tracking-wider uppercase`}>{weddingData?.couple?.groom?.name?.split(' ')[0] || "RSVP"}</span><br />
-                                    <a href={`tel:+${weddingData.contact.whatsapp}`} className="underline decoration-1 underline-offset-4 hover:opacity-70 transition-opacity mt-1 inline-block">
-                                        +{weddingData.contact.whatsapp.slice(0, 2)} {weddingData.contact.whatsapp.slice(2, 6)} {weddingData.contact.whatsapp.slice(6, 9)} {weddingData.contact.whatsapp.slice(9)}
-                                    </a>
-                                </div>
-                            ) : weddingData?.contact?.phone ? (
-                                <div className="space-y-5">
-                                    {weddingData.contact.phone.map((ph: any, i: number) => (
-                                        <div key={i} className={`font-serif text-sm tracking-widest ${t.textMuted}`}>
-                                            <span className={`font-sans font-bold ${t.textMain} text-[10px] md:text-xs tracking-wider uppercase`}>{ph.name}</span><br />
-                                            <a href={`tel:${ph.number}`} className="underline decoration-1 underline-offset-4 hover:opacity-70 transition-opacity mt-1 inline-block">
-                                                {ph.number}
-                                            </a>
-                                        </div>
-                                    ))}
-                                </div>
-                            ) : (
-                                <div className={`font-serif text-sm tracking-widest ${t.textMuted}`}>
-                                    <span className={`font-sans font-bold ${t.textMain} text-[10px] tracking-wider uppercase`}>{weddingData?.couple?.groom?.name?.split(' ')[0] || "RSVP"}</span><br />
-                                    <a href="tel:+919097785207" className="underline decoration-1 underline-offset-4 hover:opacity-70 transition-opacity mt-1 inline-block">
-                                        +91 9097 785 207
-                                    </a>
-                                </div>
-                            )}
+                    {/* SECTION 4: CONTACT & SIGN OFF */}
+                    <div className={`absolute inset-0 pt-16 flex flex-col items-center justify-center text-center px-10 transition-all duration-1000 ease-out ${activeIndex === 4 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
+                        <img src="/assets/images/logo-plain.svg" alt="Logo" className="w-[40vw] md:w-[250px] mb-12 md:mb-4 object-contain opacity-90" />
+                        <h2 className={`font-sans uppercase text-md md:text-lg font-bold tracking-[0.2em] mb-4 drop-shadow-sm ${t.textAccent}`}>Forever Marked in Time</h2>
+                        <p className={`font-sans text-[10px] md:text-xs font-semibold leading-[1.7] max-w-[280px] md:max-w-xs mb-10 ${t.textMuted}`}>
+                            Counting down the days until we celebrate this beautiful milestone together.
+                        </p>
+
+                        <div className="flex flex-col items-center justify-center w-full z-20 relative">
+                            <div className={`font-sans uppercase text-2xl md:text-3xl font-bold tracking-[0.2em] mb-6 ${t.textMain}`}>
+                                {weddingData?.wedding?.displayDate || "MAY 31ST, 2026"}
+                            </div>
+
+                            <div className={`w-20 h-px mx-auto mb-8 ${t.border} border-t`}></div>
+
+                            <CountdownTimer
+                                targetDate={weddingData?.wedding?.date || "2026-05-31T19:00:00"}
+                                textMainClass={t.textMain}
+                                textMutedClass={t.textMuted}
+                            />
                         </div>
 
-                        <h3 className={`font-script text-5xl md:text-6xl mt-4 ${t.textMain}`}>See you there</h3>
+                        <h3 className={`font-sans uppercase text-lg md:text-xl font-bold tracking-[0.2em] mt-4 ${t.textMain}`}>See you there</h3>
 
                         {/* HALF SEAL FOR CLOSING */}
                         <div className="absolute bottom-[-30px] md:bottom-[-40px] left-1/2 -translate-x-1/2 z-50">
@@ -515,6 +515,7 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
 
                 {/* SCROLL TRACKS */}
                 <div className="w-full -mt-[90dvh] pointer-events-none">
+                    <div className="w-full h-[90dvh] snap-start snap-always" />
                     <div className="w-full h-[90dvh] snap-start snap-always" />
                     <div className="w-full h-[90dvh] snap-start snap-always" />
                     <div className="w-full h-[90dvh] snap-start snap-always" />
