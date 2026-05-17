@@ -15,27 +15,30 @@ export default function AudioPlayer({ musicUrl, autoplay = true }: { musicUrl: s
 
     let interactionHandled = false;
 
+    const events = ['click', 'touchstart', 'touchend', 'wheel', 'keydown'];
+
     const unlockAudio = () => {
       if (!interactionHandled) {
         interactionHandled = true;
         setHasInteracted(true);
         const playPromise = audio.play();
         if (playPromise !== undefined) {
-          playPromise.then(() => setIsPlaying(true)).catch(() => {});
+          playPromise.then(() => setIsPlaying(true)).catch(() => {
+            // if play fails, reset so next interaction can try
+            interactionHandled = false;
+            setHasInteracted(false);
+          });
         }
-        document.removeEventListener('click', unlockAudio);
-        document.removeEventListener('touchend', unlockAudio);
+        events.forEach(e => document.removeEventListener(e, unlockAudio, true));
       }
     };
 
-    document.addEventListener('click', unlockAudio);
-    document.addEventListener('touchend', unlockAudio);
+    events.forEach(e => document.addEventListener(e, unlockAudio, true));
 
     return () => {
       audio.pause();
       audio.src = '';
-      document.removeEventListener('click', unlockAudio);
-      document.removeEventListener('touchend', unlockAudio);
+      events.forEach(e => document.removeEventListener(e, unlockAudio, true));
     };
   }, [musicUrl]);
 
