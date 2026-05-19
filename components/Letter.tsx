@@ -440,13 +440,17 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                                 {weddingData?.wedding?.displayDate || "MAY 31ST, 2026"}
                             </div>
 
-                            <div className={`w-20 h-px mx-auto mb-2 ${t.border} border-t`}></div>
+                            <div className={`w-20 h-px mx-auto mb-4 ${t.border} border-t`}></div>
 
-                            <CountdownTimer
-                                targetDate={weddingData?.wedding?.date || "2026-05-31T19:00:00"}
-                                textMainClass={t.textMain}
-                                textMutedClass={t.textMuted}
-                            />
+                            <div className="relative p-[1px] w-full max-w-xs rounded-md bg-linear-to-br from-[#BF953F] via-[#FCF6BA] to-[#AA771C] shadow-lg">
+                                <div className={`w-full h-full rounded-[5px] p-4 flex flex-col items-center justify-center ${t.bg} bg-opacity-90 backdrop-blur-md`}>
+                                    <CountdownTimer
+                                        targetDate={weddingData?.wedding?.date || "2026-05-31T19:00:00"}
+                                        textMainClass={t.textMain}
+                                        textMutedClass={t.textMuted}
+                                    />
+                                </div>
+                            </div>
                         </div>
 
                         <h3 className={`font-sans uppercase text-sm md:text-base font-bold tracking-[0.2em] mt-8 ${t.textMain}`}>See you there</h3>

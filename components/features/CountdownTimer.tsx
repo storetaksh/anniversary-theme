@@ -50,16 +50,23 @@ export default function CountdownTimer({
   if (!isMounted) return null;
 
   return (
-    <div className="flex gap-4 justify-center items-center mt-2">
-      {Object.entries(timeLeft).map(([unit, value]) => (
-        <div key={unit} className="flex flex-col items-center">
-          <div className={`text-2xl md:text-3xl font-sans font-regular mb-2 ${textMainClass}`}>
-            {value.toString().padStart(2, '0')}
+    <div className="flex gap-1 md:gap-3 justify-center items-start mt-2">
+      {Object.entries(timeLeft).map(([unit, value], index, array) => (
+        <React.Fragment key={unit}>
+          <div className="flex flex-col items-center min-w-[50px] md:min-w-[60px]">
+            <div className={`text-2xl md:text-3xl font-sans font-regular mb-2 tabular-nums ${textMainClass}`}>
+              {value.toString().padStart(2, '0')}
+            </div>
+            <div className={`text-[9px] md:text-[11px] uppercase tracking-[0.2em] font-sans font-bold ${textMutedClass}`}>
+              {unit}
+            </div>
           </div>
-          <div className={`text-[9px] md:text-[11px] uppercase tracking-[0.2em] font-sans font-bold ${textMutedClass}`}>
-            {unit}
-          </div>
-        </div>
+          {index < array.length - 1 && (
+            <div className={`text-2xl md:text-3xl font-sans font-regular -mt-0.5 md:-mt-1 ${textMainClass}`}>
+              :
+            </div>
+          )}
+        </React.Fragment>
       ))}
     </div>
   );
