@@ -26,8 +26,10 @@
             "name": "Ring Ceremony",
             "date": "May 31, 2026",
             "time": "01:00 PM",
-            "venue": "Satvika Celebration, Vijay Path, Khagaul Road, Patna 801105",
-            "googleMapsUrl": "https://maps.app.goo.gl/dKBeCLiBgkwjK1XT8",
+            "venueTitle": "TAJ City Centre, Patna",
+            "venueDetails": "Ground Floor (G), Magadh, TAJ Patna",
+            "venue": "TAJ City Centre, Patna",
+            "googleMapsUrl": "https://maps.app.goo.gl/aQqB3tujgbEd3WBo6",
             "showLocation": true,
             "mapImage": "assets/images/map.jpeg",
             "dressCode": "Occasion Ready",
@@ -35,7 +37,7 @@
         }
     ],
     "contact": {
-        "whatsapp": "919045187480",
+        "whatsapp": "918709595001",
         "instagram": ""
     },
     "messages": {

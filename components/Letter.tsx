@@ -361,8 +361,8 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                             <div className="flex flex-col items-center gap-1.5">
                                 <MapPin className={`w-4 h-4 md:w-5 md:h-5 ${t.textAccent}`} strokeWidth={1.5} />
                                 <div className={`font-sans text-[10px] md:text-xs font-semibold leading-[1.7] ${t.textMuted}`}>
-                                    <span className={`font-sans uppercase text-sm md:text-base font-bold tracking-[0.2em] ${t.textMain}`}>{weddingData?.celebrations?.[0]?.venue?.split(',')[0] || "The Conservatory"}</span><br />
-                                    {weddingData?.celebrations?.[0]?.venue?.split(',').slice(1).join(',').trim() || "123 Botanical Garden Way"}
+                                    <span className={`font-sans uppercase text-sm md:text-base font-bold tracking-[0.2em] ${t.textMain}`}>{weddingData?.celebrations?.[0]?.venueTitle || weddingData?.celebrations?.[0]?.venue?.split(',')[0] || "The Conservatory"}</span><br />
+                                    {weddingData?.celebrations?.[0]?.venueDetails || weddingData?.celebrations?.[0]?.venue?.split(',').slice(1).join(',').trim() || "123 Botanical Garden Way"}
                                 </div>
                                 {weddingData?.celebrations?.[0]?.googleMapsUrl && (
                                     <a
@@ -424,6 +424,22 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
 
                         <div className="w-full z-20 relative">
                             <RSVPForm weddingData={weddingData} />
+                        </div>
+                        
+                        <div className={`w-20 md:w-24 h-px mx-auto mt-8 mb-6 ${t.border} border-t z-20 relative`}></div>
+                        
+                        <div className="z-20 relative">
+                            <p className={`font-sans text-[10px] md:text-[11px] font-semibold tracking-widest uppercase ${t.textMuted}`}>
+                                Share Your Warmest Wishes
+                            </p>
+                            <a 
+                                href={`https://wa.me/${weddingData?.contact?.whatsapp || "918709595001"}?text=${encodeURIComponent("Wishing you a very Happy Anniversary! 🥂")}`} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className={`inline-block mt-1.5 font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-b border-current pb-0.5 ${t.textAccent} hover:opacity-70 transition-opacity`}
+                            >
+                                Send your message here
+                            </a>
                         </div>
                     </div>
 
