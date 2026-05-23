@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { MapPin, Calendar, ChevronDown } from "lucide-react";
-import RSVPForm from "./features/RSVPForm";
+import { MapPin, Calendar, ChevronDown, Phone } from "lucide-react";
 import CountdownTimer from "./features/CountdownTimer";
 
 const FlowerAnimations = () => (
@@ -414,16 +413,27 @@ export default function Letter({ isOpen, onClose, className, weddingData }: { is
                         </div>
                     </div>
 
-                    {/* SECTION 3: RSVP */}
+                    {/* SECTION 3: CONTACT */}
                     <div className={`absolute inset-0 pt-6 pb-24 flex flex-col items-center justify-center text-center px-6 transition-all duration-1000 ease-out ${activeIndex === 3 ? "opacity-100 translate-y-0 pointer-events-auto delay-200" : "opacity-0 translate-y-8 pointer-events-none"}`}>
                         <img src="/assets/images/logo-plain.svg" alt="Logo" className="w-[40vw] md:w-[250px] mb-4 object-contain opacity-90" />
-                        <h2 className={`font-sans uppercase text-3xl md:text-4xl font-bold tracking-[0.2em] mb-4 drop-shadow-sm ${t.textAccent}`}>RSVP</h2>
+                        <h2 className={`font-sans uppercase text-3xl md:text-4xl font-bold tracking-[0.2em] mb-4 drop-shadow-sm ${t.textAccent}`}>Reach Out</h2>
                         <p className={`font-sans text-[10px] md:text-xs font-semibold leading-[1.7] max-w-xs mb-6 ${t.textMuted}`}>
-                            We would be thrilled to have you join us. Please let us know if you can make it.
+                            For any queries or to confirm your presence, please feel free to connect with us.
                         </p>
 
-                        <div className="w-full z-20 relative">
-                            <RSVPForm weddingData={weddingData} />
+                        <div className={`p-6 w-full max-w-xs rounded-sm ${t.card} z-20 relative flex flex-col items-center`}>
+                            <h4 className={`text-[10px] md:text-xs font-sans font-bold uppercase tracking-[0.2em] mb-1 ${t.textMain}`}>Contact Person</h4>
+                            <p className={`font-sans text-base md:text-lg font-bold tracking-[0.1em] mb-3 ${t.textAccent}`}>Subodh Verma</p>
+                            
+                            <div className={`w-12 h-px mx-auto mb-4 ${t.border} border-t`}></div>
+                            
+                            <a
+                                href="tel:8709595001"
+                                className={`px-5 py-2.5 rounded-full text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 ${t.btnSolid} hover:scale-105`}
+                            >
+                                <Phone className="w-3.5 h-3.5" />
+                                8709595001
+                            </a>
                         </div>
                         
                         <div className={`w-20 md:w-24 h-px mx-auto mt-8 mb-6 ${t.border} border-t z-20 relative`}></div>
